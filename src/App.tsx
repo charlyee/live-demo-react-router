@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { Fragment } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import PageOne from './components/PageOne';
+import PageTwo from './components/PageTwo';
+import PageThree from './components/PageThree';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export interface IAppProps {
 }
 
-export default App;
+export default class App extends React.Component<IAppProps> {
+  public render() {
+    return (
+      <Fragment>
+        <Switch>
+          <Route path='/pageOne' component={PageOne}/>
+          <Route path='/pageTwo' component={PageTwo}/>
+          <Route path='/pageThree' component={PageThree}/>
+        </Switch>
+      </Fragment>
+    );
+  }
+}
