@@ -1,6 +1,12 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-export interface IUserProfileProps {
+interface IRouteParams {
+    id: string;
+}
+
+export interface IUserProfileProps extends RouteComponentProps<IRouteParams> {
+
 }
 
 export default class UserProfile extends React.Component<IUserProfileProps> {
